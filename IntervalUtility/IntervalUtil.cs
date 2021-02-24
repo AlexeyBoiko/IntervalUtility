@@ -8,7 +8,7 @@ namespace IntervalUtility {
         /// Find intersections of arrays of intervals
         /// [[2,5], [7,9]] & [[0,3], [4,6], [7,10]] & [[1,4], [5,8]] -> [[2,3], [7,8]]
         /// </summary>
-        public IEnumerable<Interval<T>> Intersections<T>(IEnumerable<IEnumerable<Interval<T>>> intervalCollection)
+        public IEnumerable<Interval<T>> Intersections<T>(IEnumerable<ICollection<Interval<T>>> intervalCollection)
             where T : struct, IComparable {
             IEnumerable<Interval<T>> res = null;
             foreach (var interval in intervalCollection)
@@ -21,7 +21,7 @@ namespace IntervalUtility {
         /// Find intersections of 2 arrays of intervals
         /// [[2,5], [7,9]] & [[0,3], [4,6], [7,10]] -> [[2,3], [4,5], [7,9]]
         /// </summary>
-        public IEnumerable<Interval<T>> Intersections<T>(IEnumerable<Interval<T>> intervals1, IEnumerable<Interval<T>> intervals2) where T : struct, IComparable {
+        public IEnumerable<Interval<T>> Intersections<T>(IEnumerable<Interval<T>> intervals1, ICollection<Interval<T>> intervals2) where T : struct, IComparable {
             if (intervals1 == null || intervals2 == null) {
                 var notNullInteral = intervals1 ?? intervals2;
                 if (notNullInteral == null)

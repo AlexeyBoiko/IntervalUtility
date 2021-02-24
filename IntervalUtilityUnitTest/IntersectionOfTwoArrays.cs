@@ -1,5 +1,6 @@
 ﻿using IntervalUtility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace IntervalUtilityUnitTest {
     [TestClass]
@@ -7,7 +8,7 @@ namespace IntervalUtilityUnitTest {
 
         void True(Interval<int>[] a, Interval<int>[] b, Interval<int>[] result) {
             var intervalUtil = new IntervalUtil();
-            var res = intervalUtil.Intersections(a, b);
+            var res = intervalUtil.Intersections(a, b).ToArray();
             Assert.IsTrue(res.Eq(result), $"{a.ToStr()} Intersections {b.ToStr()} = {res.ToStr()}");
         }
 

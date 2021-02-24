@@ -73,7 +73,8 @@ namespace IntervalUtilityUnitTest {
             Assert.IsTrue(a == b, $"{a} eq {b}");
         }
 
-
+        [TestMethod]
+        public void Eq8() => EqSign<int>(null, null);
 
         [TestMethod]
         public void NotEq1() => NotEq(new Interval<int>(null, null), new Interval<DateTime>(null, null));

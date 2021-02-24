@@ -19,57 +19,34 @@ namespace IntervalUtility {
             return $"[{Start},{End}]";
         }
 
-        public override bool Equals(object other) {
-            return Equals(other as Interval<T>);
+        public override bool Equals(object obj) {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (ReferenceEquals(this, obj))
+                return true;
+            if (obj.GetType() != this.GetType())
+                return false;
+            return Equals((Interval<T>)obj);
         }
 
         public bool Equals(Interval<T> other) {
-            // If parameter is null, return false.
-            if (other is null)
+            if (ReferenceEquals(null, other))
                 return false;
-
-            // Optimization for a common success case.
             if (ReferenceEquals(this, other))
                 return true;
-
-            // If run-time types are not exactly the same, return false.
-            if (this.GetType() != other.GetType())
-                return false;
-
-            return IsEq(Start, other.Start) && IsEq(End, other.End);
-        }
-
-        static bool IsEq(T? a, T? b) {
-            if (!a.HasValue && !b.HasValue)
-                return true;
-
-            if ((a.HasValue && !b.HasValue) || (!a.HasValue && b.HasValue))
-                return false;
-
-            return a.Value.CompareTo(b.Value) == 0;
+            return Nullable.Equals(Start, other.Start) && Nullable.Equals(End, other.End);
         }
 
         public override int GetHashCode() {
-            return Tuple.Create(Start, End).GetHashCode();
+            return HashCode.Combine(Start, End);
         }
 
         public static bool operator ==(Interval<T> a, Interval<T> b) {
-            // Check for null on left side.
-            if (a is null) {
-                if (b is null) {
-                    // null == null = true.
-                    return true;
-                }
-
-                // Only the left side is null.
-                return false;
-            }
-            // Equals handles case of null on right side.
-            return a.Equals(b);
+            return Equals(a, b);
         }
 
         public static bool operator !=(Interval<T> a, Interval<T> b) {
-            return !(a == b);
+            return !Equals(a, b);
         }
     }
 }
