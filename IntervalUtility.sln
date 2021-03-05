@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalUtility", "IntervalUtility\IntervalUtility.csproj", "{A41F25BB-6583-4EC2-AB15-41F7275ED5D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalUtilityUnitTest", "IntervalUtilityUnitTest\IntervalUtilityUnitTest.csproj", "{B5F6B185-0CB4-441A-8E17-DC7DC1D78767}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntervalUtilityUnitTest", "IntervalUtilityUnitTest\IntervalUtilityUnitTest.csproj", "{B5F6B185-0CB4-441A-8E17-DC7DC1D78767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
