@@ -1,7 +1,10 @@
 # IntervalUtility
 .Net C # utility for working with intervals, such as time periods. The utility allows you to find intersections of periods, exclude periods, etc.
 
+[NuGet](https://www.nuget.org/packages/IntervalUtility/ "Interval Utility NuGet")
+
 [Interactive demo](https://alexeyboiko.github.io/IntervalUtility/ "Interval Utility Demo")
+
 
 ## Examples
 For simplicity, the examples use integer ranges. However, the utility supports not only integers, you can use the utility to work with time periods or decimal, or float, etc.
